@@ -1,0 +1,26 @@
+pub mod complex;
+pub mod dim2;
+pub mod dim3;
+pub mod fit;
+pub mod ispan2;
+pub mod ivec2;
+pub mod ivec3;
+pub mod lerp;
+pub mod mat3;
+pub mod mat4;
+pub mod prelude;
+pub mod quat;
+pub mod span2;
+pub mod span3;
+pub mod udim2;
+pub mod udim3;
+pub mod uspan;
+pub mod uspan2;
+pub mod uvec2;
+pub mod uvec3;
+pub mod uvec4;
+pub mod vec2;
+pub mod vec3;
+pub mod vec4;
+
+#[cfg(test)] mod tests;
