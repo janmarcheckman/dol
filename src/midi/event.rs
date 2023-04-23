@@ -1,4 +1,7 @@
-#[derive(Debug, Clone, PartialEq)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[repr(C)]
 pub enum MidiEvent
 {
     NoteOn { channel: u8, pitch: u8, velocity: u8, },
@@ -31,4 +34,11 @@ pub enum MidiEvent
     TimeSignature { nn: u8, dd: u8, cc: u8, bb: u8, },
     KeySignature { sf: u8, mi: u8, },
     UnknownMetaMessage { meta_type: u8, data: Vec::<u8> },
+}
+
+impl Default for MidiEvent
+{
+    fn default() -> Self {
+        MidiEvent::NoteOn { channel: 0, pitch: 0, velocity: 0 }
+    }
 }

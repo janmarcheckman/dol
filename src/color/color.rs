@@ -1,8 +1,10 @@
 use std::ops;
 
+use serde::{Serialize, Deserialize};
+
 use super::{prelude::*, srgb::srgb_to_linear_value};
 
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
 #[repr(C)]
 pub struct Color
 {

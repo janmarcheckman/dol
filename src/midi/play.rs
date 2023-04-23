@@ -1,7 +1,11 @@
+use serde::{Serialize, Deserialize};
+
 use crate::pipe::Pipe;
 
 use super::{event::MidiEvent, midi_song::MidiSong};
 
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[repr(C)]
 pub struct MidiPlayer
 {
     cursors: Vec<MidiTrackCursor>,
@@ -59,7 +63,8 @@ impl MidiPlayer
     }
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[repr(C)]
 struct MidiTrackCursor
 {
     elapsed_seconds: f64,

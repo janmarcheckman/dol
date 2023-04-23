@@ -1,8 +1,8 @@
 use std::path::Path;
 
-use super::midi_song::{MidiSong, MidiTrack};
+use serde::{Serialize, Deserialize};
 
-use super::event::*;
+use super::{midi_song::{MidiSong, MidiTrack}, event::MidiEvent};
 
 pub fn load_midi_file<P: AsRef<Path>>(path: P) -> Option<MidiSong>
 {
@@ -10,6 +10,7 @@ pub fn load_midi_file<P: AsRef<Path>>(path: P) -> Option<MidiSong>
     read_midi_file(&bytes)
 }
 
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
 #[repr(C)]
 pub struct MidiHeader {
     pub t: u32,

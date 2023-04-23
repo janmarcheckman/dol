@@ -1,6 +1,10 @@
-#[derive(Debug, Clone, Copy, PartialEq)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[repr(C)]
 pub enum ElementState
 {
+    #[default]
     Pressed,
     Released,
 }

@@ -1,4 +1,7 @@
-#[derive(Debug, Clone, Copy)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[repr(C)]
 pub struct USpan
 {
     pub x0: usize,

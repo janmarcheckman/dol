@@ -1,6 +1,8 @@
 use std::ops;
 
-#[derive(Debug, Copy, Clone, PartialEq)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
 #[repr(C)]
 pub struct UVec2
 {

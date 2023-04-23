@@ -1,8 +1,12 @@
+use serde::{Serialize, Deserialize};
+
 use super::element_state::ElementState;
 
-#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash)]
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[repr(C)]
 pub enum KeyboardKey
 {
+    #[default]
     A,
     B,
     C,
@@ -131,7 +135,8 @@ impl ModifierState
     }
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[repr(C)]
 pub struct KeyboardInputState
 {
     pub a: ElementState,

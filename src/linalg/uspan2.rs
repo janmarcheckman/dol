@@ -1,7 +1,8 @@
+use serde::{Serialize, Deserialize};
+
 use super::prelude::*;
 
-#[allow(non_camel_case_types)]
-#[derive(Debug, Copy, Clone, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
 #[repr(C)]
 pub struct USpan2
 {

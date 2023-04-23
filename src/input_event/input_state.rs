@@ -1,8 +1,11 @@
+use serde::{Serialize, Deserialize};
+
 use crate::linalg::prelude::*;
 
 use super::{prelude::{KeyboardInputState, ModifierState}, mouse::MouseButtonsInputState, input_event::InputEvent};
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[repr(C)]
 pub struct InputState
 {
     pub cursor_pos: Vec2,

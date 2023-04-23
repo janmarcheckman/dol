@@ -1,6 +1,8 @@
 use super::prelude::*;
 
-#[derive(Debug, Copy, Clone, PartialEq)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
 #[repr(C)]
 pub struct Dim2
 {

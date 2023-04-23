@@ -1,14 +1,19 @@
+use serde::{Serialize, Deserialize};
+
 use super::element_state::ElementState;
 
-#[derive(Debug, Clone, Copy, PartialEq)]
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[repr(C)]
 pub enum MouseButton
 {
+    #[default]
     Left,
     Right,
     Middle,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[repr(C)]
 pub struct MouseButtonsInputState
 {
     pub left: ElementState,
