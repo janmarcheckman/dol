@@ -91,7 +91,7 @@ impl Mat3
 
     pub fn swing_y(to: Vec3) -> Mat3
     {
-        Mat3::swing(Vec3::E1, to)
+        Mat3::swing(Vec3::Y, to)
     }
     
     pub fn euler(x: f32, y: f32, z: f32) -> Mat3

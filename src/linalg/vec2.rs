@@ -148,8 +148,8 @@ impl ops::Sub<Vec2> for Vec2
 impl Vec2
 {
     pub const ZERO: Vec2 = Vec2 { x: 0.0, y: 0.0 };
-    pub const E0: Vec2 = Vec2 { x: 1.0, y: 0.0 };
-    pub const E1: Vec2 = Vec2 { x: 0.0, y: 1.0 };
+    pub const X: Vec2 = Vec2 { x: 1.0, y: 0.0 };
+    pub const Y: Vec2 = Vec2 { x: 0.0, y: 1.0 };
     pub const ONE: Vec2 = Vec2 { x: 1.0, y: 1.0 };
 
     pub fn new(x: f32, y: f32) -> Vec2

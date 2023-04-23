@@ -157,19 +157,19 @@ impl Quat
         let mut axis = Vec3::cross(from, to).nor();
         if axis.x.is_nan() || axis.y.is_nan() || axis.z.is_nan()
         {
-            axis = Vec3::E2;
+            axis = Vec3::Z;
         }
         Quat::angle_axis(angle, axis)
     }
     
     pub fn swing_y(to: Vec3) -> Quat
     {
-        let from = Vec3::E1;
+        let from = Vec3::Y;
         let angle = Vec3::angle(from, to);
         let mut axis = Vec3::cross(from, to).nor();
         if axis.x.is_nan() || axis.y.is_nan() || axis.z.is_nan()
         {
-            axis = Vec3::E2;
+            axis = Vec3::Z;
         }
         Quat::angle_axis(angle, axis)
     }
